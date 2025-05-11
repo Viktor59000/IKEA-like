@@ -96,9 +96,6 @@ A modern IKEA-inspired e-commerce platform featuring product catalog, shopping c
         ARIA labels
         Keyboard navigation support
 
-📜 License
-
-MIT License - see LICENSE file
 🙏 Acknowledgements
 
     Product data and images adapted from IKEA.com
