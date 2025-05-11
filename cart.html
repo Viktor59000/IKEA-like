@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="img/favicon.png"/>
+  <title>Panier IKEA</title>
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<header class="header-container">
+    <nav class="navbar-ikea">
+        <div class="navbar-ikea-content">
+          <a href="index.html" class="ikea-logo">
+            <img src="img/logo.png" alt="Logo IKEA" height="32" />
+          </a>
+          <ul>
+            <li>
+                <a href="catalogue.html" class="nav-link">Catalogue</a>
+            </li>
+            <li>
+                <a href="cart.html" class="nav-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="nav-icon" title="Connexion">
+                <i class="fas fa-user"></i>
+                </a>
+            </li>
+        </ul>
+        </div>
+      </nav>
+  </header>   
+<body>
+  <div class="wrapper">
+    <div class="cart-card" id="cart-main">
+      <div class="add-product">
+        <input type="text" id="productNameInput" placeholder="Nom ou catégorie du produit" />
+        <button id="addProductButton"><i class="fas fa-plus"></i> Ajouter</button>
+      </div>
+      <div id="cart-content"></div>
+      <div class="cart-total">
+        Total : <span id="totalAmount">0.00 €</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-container bg-light w-100 border-top-light">
+    <div class="footer-content container-full d-flex justify-content-between mx-auto">
+      <a class="footer-logo d-flex align-items-center mr-auto" href="index.html" aria-label="IKEA">
+        <img src="img/logo.png" alt="IKEA" height="32" />
+      </a>
+      <div class="footer-content-main">
+        <h5>© IKEA 2025 — Venet Viktor</h5>
+      </div>
+    </div>
+  </footer>   
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

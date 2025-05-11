@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IKEA Style Accueil</title>
+  <link rel="icon" href="img/favicon.png"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Navbar IKEA style -->
+  <nav class="navbar-ikea">
+    <div class="navbar-ikea-content">
+      <a href="index.html" class="ikea-logo">
+        <img src="img/logo.png" alt="Logo IKEA" height="32" />
+      </a>
+      <ul>
+        <li>
+            <a href="catalogue.html" class="nav-link">Catalogue</a>
+        </li>
+        <li>
+            <a href="cart.html" class="nav-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </li>
+        <li>
+            <a href="login.html" class="nav-icon" title="Connexion">
+            <i class="fas fa-user"></i>
+            </a>
+        </li>
+    </ul>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <header class="ikea-hero">
+    <div class="ikea-hero-overlay"></div>
+    <div class="ikea-hero-content">
+      <h1>Aménagez votre vie<br><span>avec style et simplicité</span></h1>
+      <p>Découvrez les nouveautés et nos incontournables pour la maison.</p>
+      <a href="catalogue.html" class="ikea-btn-yellow ikea-btn-lg">Voir le catalogue</a>
+    </div>
+  </header>
+
+  <!-- Nouveautés -->
+  <section class="ikea-featured">
+    <div class="ikea-section-title">Nouveautés</div>
+    <div id="index-featured-grid" class="ikea-featured-grid"></div>
+    <div class="ikea-center">
+      <a href="catalogue.html" class="ikea-btn-blue ikea-btn-lg">
+        Voir tout le catalogue
+        <span class="ikea-btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="16">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#FFD200" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer-container bg-light w-100 border-top-light">
+    <div class="footer-content container-full d-flex justify-content-between mx-auto">
+      <a class="footer-logo d-flex align-items-center mr-auto" href="index.html" aria-label="IKEA">
+        <img src="img/logo.png" alt="IKEA" height="32" />
+      </a>
+      <div class="footer-content-main">
+        <h5>© IKEA 2025 — Venet Viktor</h5>
+      </div>
+    </div>
+  </footer>
+  <script src="js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const grid = document.getElementById('index-featured-grid');
+      if (!grid || !window.PRODUCTS || !Array.isArray(window.PRODUCTS)) return;
+      const toShow = window.PRODUCTS.slice(0, 4);
+      grid.innerHTML = toShow.map(product => {
+        const img = (product.images && product.images.length > 0) ? product.images[1] : 'img/placeholder.png';
+        return `
+          <div class="ikea-card">
+            <div class="ikea-card-img-container">
+              <img src="${img}" alt="${product.name.replace(/"/g, '&quot;')}" class="ikea-card-img"/>
+            </div>
+            <div class="ikea-card-info">
+              <h3>${product.name}</h3>
+              <div class="ikea-card-price">${Number(product.price).toFixed(2)} €</div>
+              <a href="product.html?id=${encodeURIComponent(product.id)}" class="ikea-btn-blue ikea-btn-sm">Voir le produit</a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>

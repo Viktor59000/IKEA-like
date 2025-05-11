@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <link rel="icon" href="img/favicon.png"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>IKEA - Connexion</title>
+  </head>
+  <body class="login-bg">
+    <div id="container">
+      <div class="logo-container">
+        <img src="img/logo.png" alt="IKEA" style="height:64px;">
+      </div>
+      <div class="panel-container">
+        <div class="panel">
+          <h1 class="panel__heading">Connexion à votre compte IKEA</h1>
+          <p class="panel__subheading">
+            Pas encore de compte ? <a href="#">Créer un compte</a>
+          </p>
+          <form id="login-form" autocomplete="off">
+            <div class="input">
+              <label for="lastname">Nom</label>
+              <input type="text" name="lastname" id="lastname" required>
+              <div class="input__indicator"></div>
+            </div>
+            <div class="input">
+              <label for="firstname">Prénom</label>
+              <input type="text" name="firstname" id="firstname" required>
+              <div class="input__indicator"></div>
+            </div>
+            <div class="input">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" name="email" id="email" required>
+              <div class="input__indicator"></div>
+            </div>
+            <div class="input">
+              <label for="password">Mot de passe</label>
+              <input type="password" name="password" id="password" required>
+              <div class="input__indicator"></div>
+            </div>
+            <button type="submit">Se connecter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <footer class="footer-container bg-light w-100 border-top-light">
+    <div class="footer-content container-full d-flex justify-content-between mx-auto">
+      <a class="footer-logo d-flex align-items-center mr-auto" href="index.html" aria-label="IKEA">
+        <img src="img/logo.png" alt="IKEA" height="32" />
+      </a>
+      <div class="footer-content-main">
+        <h5>© IKEA 2025 — Venet Viktor</h5>
+      </div>
+    </div>
+  </footer>   
+    <script>
+      document.getElementById('login-form').onsubmit = function(e) {
+        e.preventDefault();
+        const lastname = document.getElementById('lastname').value.trim();
+        const firstname = document.getElementById('firstname').value.trim();
+        if(lastname && firstname) {
+          localStorage.setItem('nom', lastname);
+          localStorage.setItem('prenom', firstname);
+          window.location.href = "index.html";
+        }
+      };
+    </script>
+  </body>
+</html>
