@@ -49,58 +49,31 @@ A modern IKEA-inspired e-commerce platform featuring product catalog, shopping c
     Browse Products
 
         Visit /catalogue.html to view all products
-
         Click "See More" for paginated loading
-
         Hover product images for alternate views
 
     Product Details
 
         Click any product card
-
         View technical specs and multiple images
-
         Use vertical carousel to switch images
 
     Shopping Cart
 
         Add products from catalogue/details pages
-
         Adjust quantities with +/- buttons
-
         Grouped by product rooms (living room, office, etc.)
 
     Checkout
 
         Note: Demo version only - no real payment processing
-
         Access cart via navbar icon
 
     Authentication
 
         Basic login flow (/login.html)
-
         Stores user data in localStorage
 
-📂 Project Structure
-
-ikea/
-├── css/
-│   ├── style.css       # Global styles
-│   ├── cart.css        # Cart-specific styles
-│   └── login.css       # Login page styles
-├── js/
-│   ├── cart.js         # Cart functionality
-│   ├── product.js      # Product page logic
-│   ├── catalogue.js    # Catalog management
-│   ├── products.js     # Product database
-│   └── login.js        # Auth handling
-├── img/                # Image assets
-├── index.html          # Homepage
-├── catalogue.html      # Product listing
-├── product.html        # Product details
-├── cart.html           # Shopping cart
-└── login.html          # Login page
 
 🔍 Key Implementation Details
 
@@ -108,25 +81,19 @@ ikea/
     Uses localStorage for:
 
         Cart items persistence
-
         User session data
-
         Product favorites
 
     Performance
 
         Lazy image loading
-
         CSS transitions for smooth animations
-
         Efficient DOM updates with template literals
 
     Accessibility
 
         Semantic HTML5
-
         ARIA labels
-
         Keyboard navigation support
 
 📜 License
@@ -135,9 +102,6 @@ MIT License - see LICENSE file
 🙏 Acknowledgements
 
     Product data and images adapted from IKEA.com
-
     UI inspired by IKEA's design system
-
     Font Awesome for icon system
-
     Unsplash for demo images
